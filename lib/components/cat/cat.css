@@ -1,0 +1,12 @@
+:host {
+  display: inline-block;
+  margin: 5px;
+}
+
+.meow-button {
+  width: 50px;
+}
+
+.cat-image {
+  max-height: 100px;
+}
