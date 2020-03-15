@@ -10,7 +10,7 @@ import 'package:angular_app/components/cat/cat.dart';
     CatComponent,
   ],
 )
-class CatVillageComponent {
+class CatVillageComponent implements OnInit, AfterChanges, OnDestroy {
   @Input()
   String villageName;
 
@@ -18,5 +18,20 @@ class CatVillageComponent {
 
   void handleMeow(String message) {
     villageEvents.add(message);
+  }
+
+  @override
+  void ngOnInit() {
+    villageEvents.add('ngOnInit');
+  }
+
+  @override
+  void ngAfterChanges() {
+    villageEvents.add('AfterChanges');
+  }
+
+  @override
+  void ngOnDestroy() {
+    villageEvents.add('ngOnDestroy');
   }
 }
