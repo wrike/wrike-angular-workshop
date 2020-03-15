@@ -5,5 +5,9 @@ import 'package:angular/angular.dart';
   templateUrl: 'app_component.html'
 )
 class AppComponent {
-  String text = 'Hello DartAngular';
+  String name = 'Hello DartAngular';
+
+  void handleNameChange(String inputValue) {
+    name = inputValue;
+  }
 }
