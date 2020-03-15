@@ -1,17 +1,17 @@
 import 'package:angular/angular.dart';
-import 'package:angular_app/components/cat/cat.dart';
+import 'package:angular_app/components/cat_village/cat_village.dart';
 
 @Component(
   selector: 'my-app',
   templateUrl: 'app_component.html',
   directives: [
-    CatComponent,
+    CatVillageComponent,
   ],
 )
 class AppComponent {
-  String name = 'Hello DartAngular';
+  String villageName = 'Catville';
 
   void handleNameChange(String inputValue) {
-    name = inputValue;
+    villageName = inputValue;
   }
 }

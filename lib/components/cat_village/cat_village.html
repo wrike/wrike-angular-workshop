@@ -1,0 +1,30 @@
+<h1> {{ villageName }} </h1>
+
+<div>
+
+  <cat
+    [name]="'Tom'"
+    (onMeow)="handleMeow($event)">
+  </cat>
+
+  <cat
+    [name]="'Oliver'"
+    (onMeow)="handleMeow($event)">
+  </cat>
+</div>
+
+<h1> What happen today?</h1>
+
+<div
+  *ngIf="villageEvents.isEmpty">
+  Nothing yet, cats are sleeping!
+</div>
+
+<template
+  [ngIf]="villageEvents.isNotEmpty">
+
+  <div
+    *ngFor="let event of villageEvents">
+    {{ event }}
+  </div>
+</template>
