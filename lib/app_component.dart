@@ -1,5 +1,5 @@
 import 'package:angular/angular.dart';
-import 'package:angular_app/components/cat_village/cat_village.dart';
+import 'package:angular_app/src/components/cat_village/cat_village.dart';
 
 @Component(
   selector: 'my-app',
