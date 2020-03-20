@@ -12,7 +12,7 @@ import 'package:angular_app/src/services/cat_service.dart';
     CatComponent,
   ],
   providers: [
-    CatService
+    ClassProvider<CatService>(CatService)
   ]
 )
 class CatVillageComponent implements OnInit, AfterChanges, OnDestroy {
