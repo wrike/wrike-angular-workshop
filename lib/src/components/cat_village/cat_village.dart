@@ -2,6 +2,7 @@ import 'package:angular/angular.dart';
 import 'package:angular_app/src/components/cat/cat.dart';
 import 'package:angular_app/src/model/cat.dart';
 import 'package:angular_app/src/services/cat_service.dart';
+import 'package:angular_app/src/services/cat_service_local_impl.dart';
 
 @Component(
   selector: 'cat-village',
@@ -12,7 +13,7 @@ import 'package:angular_app/src/services/cat_service.dart';
     CatComponent,
   ],
   providers: [
-    ClassProvider<CatService>(CatService)
+    ClassProvider<CatService>(CatService, useClass: CatServiceLocalImpl)
   ]
 )
 class CatVillageComponent implements OnInit, AfterChanges, OnDestroy {
@@ -26,7 +27,7 @@ class CatVillageComponent implements OnInit, AfterChanges, OnDestroy {
   Iterable<Cat> cats;
 
   CatVillageComponent(this._catService) {
-    cats = _catService.getCats();
+    _initCats();
   }
 
   void handleMeow(String message) {
@@ -46,5 +47,9 @@ class CatVillageComponent implements OnInit, AfterChanges, OnDestroy {
   @override
   void ngOnDestroy() {
     villageEvents.add('ngOnDestroy');
+  }
+
+  void _initCats() async {
+    cats = await _catService.getCats();
   }
 }
