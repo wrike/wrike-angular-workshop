@@ -34,6 +34,10 @@ class CatVillageComponent implements OnInit, AfterChanges, OnDestroy {
     villageEvents.add(message);
   }
 
+  void handleFeed(String message) {
+    villageEvents.add(message);
+  }
+
   @override
   void ngOnInit() {
     villageEvents.add('ngOnInit');

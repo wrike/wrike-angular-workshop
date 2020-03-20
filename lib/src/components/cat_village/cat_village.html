@@ -4,7 +4,8 @@
   <cat
     *ngFor="let cat of cats"
     [name]="cat.name"
-    (onMeow)="handleMeow($event)">
+    (onMeow)="handleMeow($event)"
+    (onFeed)="handleFeed($event)">
   </cat>
 </div>
 

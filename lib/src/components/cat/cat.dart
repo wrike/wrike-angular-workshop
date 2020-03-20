@@ -14,9 +14,18 @@ class CatComponent {
   @Output()
   Stream<String> get onMeow => _meowController.stream;
 
+  @Output()
+  Stream<String> get onFeed => _feedController.stream;
+
   final StreamController<String> _meowController = StreamController.broadcast();
+
+  final StreamController<String> _feedController = StreamController();
 
   void doMeow() {
     _meowController.add('Meow from $name!');
+  }
+
+  void askForFood() {
+    _feedController.add('Please feed me!');
   }
 }
