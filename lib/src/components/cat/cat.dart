@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:angular/angular.dart';
+import 'package:angular_app/src/services/food_service.dart';
 
 @Component(
   selector: 'cat',
@@ -21,11 +22,18 @@ class CatComponent {
 
   final StreamController<String> _feedController = StreamController();
 
+  final FoodService _foodService;
+
+  CatComponent(this._foodService);
+
   void doMeow() {
     _meowController.add('Meow from $name!');
   }
 
   void askForFood() {
-    _feedController.add('Please feed me!');
+    final portions = _foodService.askForFood();
+    final foodLeft = _foodService.foodLeft;
+
+    _feedController.add('Thanks for $portions portions! We have $foodLeft more');
   }
 }

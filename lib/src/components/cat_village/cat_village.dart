@@ -3,6 +3,7 @@ import 'package:angular_app/src/components/cat/cat.dart';
 import 'package:angular_app/src/model/cat.dart';
 import 'package:angular_app/src/services/cat_service.dart';
 import 'package:angular_app/src/services/cat_service_http_impl.dart';
+import 'package:angular_app/src/services/food_service.dart';
 
 @Component(
   selector: 'cat-village',
@@ -13,7 +14,8 @@ import 'package:angular_app/src/services/cat_service_http_impl.dart';
     CatComponent,
   ],
   providers: [
-    ClassProvider<CatService>(CatService, useClass: CatServiceHttpImpl)
+    ClassProvider<CatService>(CatService, useClass: CatServiceHttpImpl),
+    ClassProvider<FoodService>(FoodService)
   ]
 )
 class CatVillageComponent implements OnInit, AfterChanges, OnDestroy {
