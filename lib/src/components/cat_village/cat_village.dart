@@ -1,5 +1,7 @@
 import 'package:angular/angular.dart';
 import 'package:angular_app/src/components/cat/cat.dart';
+import 'package:angular_app/src/model/cat.dart';
+import 'package:angular_app/src/services/cat_service.dart';
 
 @Component(
   selector: 'cat-village',
@@ -15,6 +17,13 @@ class CatVillageComponent implements OnInit, AfterChanges, OnDestroy {
   String villageName;
 
   final villageEvents = <String>[];
+
+  Iterable<Cat> cats;
+
+  CatVillageComponent() {
+    final service = CatService();
+    cats = service.getCats();
+  }
 
   void handleMeow(String message) {
     villageEvents.add(message);

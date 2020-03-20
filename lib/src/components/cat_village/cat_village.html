@@ -1,14 +1,9 @@
 <h1> {{ villageName }} </h1>
 
 <div>
-
   <cat
-    [name]="'Tom'"
-    (onMeow)="handleMeow($event)">
-  </cat>
-
-  <cat
-    [name]="'Oliver'"
+    *ngFor="let cat of cats"
+    [name]="cat.name"
     (onMeow)="handleMeow($event)">
   </cat>
 </div>
