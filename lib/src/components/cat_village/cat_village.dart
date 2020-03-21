@@ -22,7 +22,7 @@ class CatVillageComponent implements OnInit, AfterChanges, OnDestroy {
 
   @override
   void ngOnInit() {
-    villageEvents.add('ngOnInit');
+    villageEvents.add('OnInit');
   }
 
   @override
@@ -32,6 +32,6 @@ class CatVillageComponent implements OnInit, AfterChanges, OnDestroy {
 
   @override
   void ngOnDestroy() {
-    villageEvents.add('ngOnDestroy');
+    villageEvents.add('OnDestroy');
   }
 }
