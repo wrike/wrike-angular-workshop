@@ -10,13 +10,4 @@ import 'package:angular/angular.dart';
 class CatComponent {
   @Input()
   String name;
-
-  @Output()
-  Stream<String> get onMeow => _meowController.stream;
-
-  final StreamController<String> _meowController = StreamController.broadcast();
-
-  void doMeow() {
-    _meowController.add('Meow from $name!');
-  }
 }
